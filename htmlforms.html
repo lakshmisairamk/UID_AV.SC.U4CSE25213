@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>The input Element</h2>
+<form>
+    <fieldset>
+        <legend>Personalia:</legend>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit"><br><br>
+        <label for="cars">Choose a car:</label>
+    </fieldset>
+    <fieldset>
+        <legend>Academic information</legend>
+        <label for="expected cgpa">Expected cgpa</label>
+        <input type="text" id="expectedcgpa" name="expectedcgpa"><br>
+        <label for="obtained cgpa">Obtained cgpa</label>
+        <input type="text" id="obtainedcgpa" name="obtainedcgpa"><br>
+    </fieldset>
+    
+    
+    <select id="cars" name="cars" size="3">
+        <option value="">--Select--</option>
+        <option value="volvo">Volvo XC90</option>
+        <option value="saab">Saab 95</option>
+        <option value="mercedes">Mercedes SLK</option>
+        <option value="audi">Audi TT</option>
+    </select><br><br>
+    <label for="feedback">Feedback</label>
+    <textarea name="message" rows="10" cols="30">The cat was playing in the garden</textarea><br><br>
+    <input type="submit" value="Submit"><br><br>
+    <h2>The button Element</h2><br>
+    <button type="button" onclick="alert('Hello World!')">Click Me!</button><br>
+    <h3>The datalist Element</h3>
+    <input list="browsers" name="browser">
+    <datalist id="browsers">
+        <option value="Edge"></option>
+        <option value="Firefox"></option>
+        <option value="Chrome"></option>
+        <option value="Opera"></option>
+        <option value="Safari"></option>
+    </datalist>
+    <input type="submit">
+        
+        
+        
+    </datalist>
+    <h4>The output Element</h4>
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0<br>
+        <input type="range" id="a" name="a" value="50">
+        <input type="number" id="b" name="b" value="50">
+    
+
+    </form>
+    
+
+    
+
+
+
+    
+</form>
+
+</body>
+</html>
