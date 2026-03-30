@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Admission Registration</title>
+</head>
+<body bgcolor="#ffffff">
+
+<h2 align="center">College Admission Registration</h2>
+
+<form action="" method="post">
+    <table align="center" border="1" cellpadding="10" cellspacing="0" bgcolor="#e8eaf6" width="600">
+
+        <tr>
+            <td><label for="fullname">Full Name:</label></td>
+            <td><input type="text" id="fullname" name="fullname"></td>
+        </tr>
+
+        <tr>
+            <td><label for="email">Email:</label></td>
+            <td><input type="email" id="email" name="email"></td>
+        </tr>
+
+        <tr>
+            <td><label for="phone">Phone Number:</label></td>
+            <td><input type="tel" id="phone" name="phone"></td>
+        </tr>
+
+        <tr>
+            <td><label>Gender:</label></td>
+            <td>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="other"> Other
+            </td>
+        </tr>
+
+        <tr>
+            <td><label for="course">Course Applying For:</label></td>
+            <td>
+                <select id="course" name="course">
+                    <option value="btech">B.Tech</option>
+                    <option value="bsc">B.Sc</option>
+                    <option value="bca">BCA</option>
+                    <option value="mtech">M.Tech</option>
+                    <option value="mca">MCA</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label>Hobbies:</label></td>
+            <td>
+                <input type="checkbox" name="hobbies" value="sports"> Sports
+                <input type="checkbox" name="hobbies" value="music"> Music
+                <input type="checkbox" name="hobbies" value="reading"> Reading
+            </td>
+        </tr>
+
+        <tr>
+            <td><label for="dob">Date of Birth:</label></td>
+            <td><input type="date" id="dob" name="dob"></td>
+        </tr>
+
+        <tr>
+            <td><label for="certificates">Upload Certificates:</label></td>
+            <td><input type="file" id="certificates" name="certificates"></td>
+        </tr>
+
+        <tr>
+            <td><label for="address">Address:</label></td>
+            <td><textarea id="address" name="address" rows="4" cols="30"></textarea></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </td>
+        </tr>
+
+    </table>
+</form>
+
+</body>
+</html>

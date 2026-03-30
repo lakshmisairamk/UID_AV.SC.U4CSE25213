@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Harmony Music Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins;
+background-image:url("https://images.unsplash.com/photo-1511379938547-c1f69419868d");
+background-size:cover;
+background-position:center;
+}
+
+/* HEADER */
+
+.header-card{
+width:90%;
+margin:30px auto;
+padding:40px;
+text-align:center;
+border-radius:20px;
+background:rgba(43,60,64,0.9);
+color:#d4af37;
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
+
+.header-card h1{
+font-family:"Playfair Display";
+font-size:48px;
+letter-spacing:3px;
+}
+
+.subtitle{
+font-style:italic;
+color:#f5e6c5;
+}
+
+/* GRID */
+
+.container{
+width:95%;
+margin:auto;
+display:grid;
+grid-template-columns:250px 1fr;
+gap:30px;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+background:rgba(114,165,158,0.9);
+padding:25px;
+border-radius:18px;
+color:white;
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
+
+.sidebar h3{
+color:#503bb8;
+text-align:center;
+}
+
+.sidebar label{
+display:block;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+text-align:center;
+background:rgba(255,255,255,0.1);
+cursor:pointer;
+transition:0.3s;
+}
+
+.sidebar label:hover{
+background:#d4af37;
+color:black;
+}
+
+/* MAIN */
+
+.main{
+background:rgba(40,15,10,0.9);
+padding:30px;
+border-radius:18px;
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
+color:white;
+}
+
+/* PRODUCT GRID */
+
+.products{
+display:none;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+margin-top:20px;
+}
+
+.card{
+background:rgba(170,107,107,0.08);
+padding:15px;
+border-radius:12px;
+text-align:center;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 30px rgba(0,0,0,0.5);
+}
+
+.card img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:8px;
+}
+
+.price{
+margin-top:8px;
+font-weight:bold;
+color:#ffd700;
+}
+
+/* hide radio */
+
+input{
+display:none;
+}
+
+/* SHOW LOGIC */
+
+#home:checked ~ .container .home-products{display:grid;}
+
+#guitar:checked ~ .container .guitars{display:grid;}
+
+#piano:checked ~ .container .pianos{display:grid;}
+
+#drum:checked ~ .container .drums{display:grid;}
+
+#violin:checked ~ .container .violins{display:grid;}
+
+#flute:checked ~ .container .flutes{display:grid;}
+footer{
+background:linear-gradient(90deg,#10b981,#06b6d4,#6366f1);
+color:white;
+text-align:center;
+padding:15px;
+margin-top:20px;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- RADIO BUTTONS -->
+
+<input type="radio" name="instrument" id="home" checked>
+<input type="radio" name="instrument" id="guitar">
+<input type="radio" name="instrument" id="piano">
+<input type="radio" name="instrument" id="drum">
+<input type="radio" name="instrument" id="violin">
+<input type="radio" name="instrument" id="flute">
+
+<!-- HEADER -->
+
+<div class="header-card">
+
+✨ WELCOME ✨
+
+<h1>THE HARMONY MUSIC STORE</h1>
+
+<div class="subtitle">
+~ A Premium Musical Experience ~
+</div>
+
+</div>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h3>Instruments</h3>
+
+<label for="home">Home</label>
+<label for="guitar">Guitars</label>
+<label for="piano">Pianos</label>
+<label for="drum">Drums</label>
+<label for="violin">Violins</label>
+<label for="flute">Flutes</label>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<h2 style="text-align:center;color:#d4af37;">Featured Instruments</h2>
+
+<!-- HOME PAGE (ALL PRODUCTS) -->
+
+<div class="products home-products">
+
+<div class="card">
+<img src="https://s.yimg.com/ny/api/res/1.2/Xz9IA1w_Txd0_Fl7x.5v5g--/YXBwaWQ9aGlnaGxhbmRlcjt3PTI0MDA7aD0xMzUwO2NmPXdlYnA-/https://media.zenfs.com/en/musicradar_907/d76f71761208ecf5c96df4e35f05ef27">
+<p>Acoustic Guitar</p>
+<p class="price">$200</p>
+</div>
+
+<div class="card">
+<img src="https://cdn.shopaccino.com/johns-music/products/3-sub-17282249882074_l.jpg">
+<p>Electric Guitar</p>
+<p class="price">$450</p>
+</div>
+
+<div class="card">
+<img src="https://cdn.toontrack.com/app/uploads/product/grand-piano-ekx/jpg/GrandPiano-EKX_BG.jpg">
+<p>Grand Piano</p>
+<p class="price">$900</p>
+</div>
+
+<div class="card">
+<img src="https://m.media-amazon.com/images/I/71QSwh6GHkL.jpg">
+<p>Drum Set</p>
+<p class="price">$320</p>
+</div>
+
+<div class="card">
+<img src="https://akkarai.in/wp-content/uploads/2024/10/viola-2021-7.jpg">
+<p>Violin</p>
+<p class="price">$250</p>
+</div>
+
+<div class="card">
+<img src="https://3.imimg.com/data3/ST/BY/MY-20262388/designer-flute.jpg">
+<p>Bamboo Flute</p>
+<p class="price">$120</p>
+</div>
+
+</div>
+
+<!-- GUITARS -->
+
+<div class="products guitars">
+
+<div class="card">
+<img src="https://s.yimg.com/ny/api/res/1.2/Xz9IA1w_Txd0_Fl7x.5v5g--/YXBwaWQ9aGlnaGxhbmRlcjt3PTI0MDA7aD0xMzUwO2NmPXdlYnA-/https://media.zenfs.com/en/musicradar_907/d76f71761208ecf5c96df4e35f05ef27">
+<p>Acoustic Guitar</p>
+<p class="price">$200</p>
+</div>
+
+<div class="card">
+<img src="https://cdn.shopaccino.com/johns-music/products/3-sub-17282249882074_l.jpg">
+<p>Electric Guitar</p>
+<p class="price">$450</p>
+</div>
+
+<div class="card">
+<img src="https://m.media-amazon.com/images/I/61-oD5CzAUL._AC_UF894,1000_QL80_.jpg">
+<p>Bass Guitar</p>
+<p class="price">$380</p>
+</div>
+
+<div class="card">
+<img src="https://blog.ernieball.com/wp-content/uploads/2020/01/kisspng-classical-guitar-acoustic-guitar-flamenco-guitar-g-1930-5b40a650b02a58.6416939215309635367216.png">
+<p>Classical Guitar</p>
+<p class="price">$400</p>
+</div>
+
+</div>
+
+<!-- PIANOS -->
+
+<div class="products pianos">
+
+<div class="card">
+<img src="https://cdn.toontrack.com/app/uploads/product/grand-piano-ekx/jpg/GrandPiano-EKX_BG.jpg">
+<p>Grand Piano</p>
+<p class="price">$900</p>
+</div>
+
+<div class="card">
+<img src="https://in.yamaha.com/en/files/up_product_u3_sat-ame-wal_tcm142-1742818.jpg?impolicy=resize&imwid=735&imhei=735">
+<p>Upright Piano</p>
+<p class="price">$700</p>
+</div>
+
+</div>
+
+<!-- DRUMS -->
+
+<div class="products drums">
+
+<div class="card">
+<img src="https://m.media-amazon.com/images/I/71QSwh6GHkL.jpg">
+<p>Drum Set</p>
+<p class="price">$320</p>
+</div>
+
+<div class="card">
+<img src="https://static.wixstatic.com/media/009440_d8f9d6c899a843f1874273bc656b3672~mv2.jpg/v1/fill/w_640,h_588,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/009440_d8f9d6c899a843f1874273bc656b3672~mv2.jpg">
+<p>Snare Drum</p>
+<p class="price">$150</p>
+</div>
+
+</div>
+
+<!-- VIOLINS -->
+
+<div class="products violins">
+
+<div class="card">
+<img src="https://akkarai.in/wp-content/uploads/2024/10/viola-2021-7.jpg">
+<p>Violin</p>
+<p class="price">$250</p>
+</div>
+
+<div class="card">
+<img src="https://static.wixstatic.com/media/378fa9_90af7f36d505419ca88d45f35cbf9c96~mv2.png/v1/fill/w_560,h_622,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/378fa9_90af7f36d505419ca88d45f35cbf9c96~mv2.png">
+<p>Professional Violin</p>
+<p class="price">$480</p>
+</div>
+
+</div>
+
+<!-- FLUTES -->
+
+<div class="products flutes">
+
+<div class="card">
+<img src="https://3.imimg.com/data3/ST/BY/MY-20262388/designer-flute.jpg">
+<p>Bamboo Flute</p>
+<p class="price">$120</p>
+</div>
+
+<div class="card">
+<img src="https://m.media-amazon.com/images/I/51KPDVPuDGL.jpg">
+<p>Concert Flute</p>
+<p class="price">$300</p>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<footer>
+© 2026 Harmony Music Store | Feel the Rhythm 🎶
+</footer>
+
+
+</div>
+
+
+
+</body>
+</html>
