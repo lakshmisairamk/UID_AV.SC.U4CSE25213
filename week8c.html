@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolling Circle</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1a1a1a;
+            font-family: Arial, sans-serif;
+            overflow: hidden; 
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        
+        .circle {
+            width: 100px;
+            height: 100px;
+            background: conic-gradient(#f39c12, #e67e22, #d35400, #f39c12);
+            border-radius: 50%;
+            border: 4px solid #fff;
+            
+            
+            animation: roll 3s linear infinite alternate;
+        }
+
+        
+        @keyframes roll {
+            from {
+                transform: translateX(-150px) rotate(0deg);
+            }
+            to {
+                transform: translateX(150px) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Rolling Circle</h1>
+        <div class="circle"></div>
+    </div>
+
+</body>
+</html>
