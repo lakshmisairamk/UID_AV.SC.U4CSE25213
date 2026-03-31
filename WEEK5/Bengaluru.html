@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amrita Vishwa Vidyapeetham – BENGALURU</title>
+  <style>
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    .top-header {
+      background: #8B0000;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    .top-header h1 {
+      color: #ffffff;
+      font-size: 2.2rem;
+      font-weight: bold;
+      font-family: 'Times New Roman', serif;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    /* CAMPUS NAV */
+    .campus-nav {
+      background: #1a1a1a;
+      padding: 8px 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .campus-nav a {
+      background: none;
+      border: none;
+      color: #DAA520;
+      font-size: 0.92rem;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      letter-spacing: 1px;
+      cursor: pointer;
+      padding: 4px 12px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .campus-nav a:hover,
+    .campus-nav a.active {
+      color: #FFD700;
+      text-decoration: underline;
+    }
+
+    /* MAIN AREA WITH BACKGROUND */
+    .main-bg {
+      flex: 1;
+      background-image: url('https://webfiles.amrita.edu/2022/02/fS229Wqz-unesco-banner-01.jpg');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      padding: 30px 36px;
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      min-height: calc(100vh - 100px);
+      position: relative;
+    }
+    .main-bg::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+
+    /* LOGIN BOX (LEFT) */
+    .login-box {
+      background: linear-gradient(170deg, #2980b9 0%, #1a6a9a 25%, #1a8050 100%);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 4px;
+      padding: 28px 26px 26px;
+      width: 280px;
+      min-width: 260px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .login-box h2 {
+      color: #ffffff;
+      font-size: 1.55rem;
+      font-weight: bold;
+      font-family: 'Times New Roman', serif;
+      text-align: center;
+      margin-bottom: 22px;
+      text-decoration: underline;
+    }
+    .login-box .field-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px;
+      gap: 8px;
+    }
+    .login-box .field-row input {
+      flex: 1;
+      padding: 5px 8px;
+      font-size: 0.82rem;
+      border: 1px solid #aaa;
+      border-radius: 2px;
+      background: #fff;
+      color: #333;
+      font-family: Arial, sans-serif;
+    }
+    .login-box .field-row input::placeholder { color: #999; font-size: 0.78rem; }
+    .login-box .field-label {
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: bold;
+      white-space: nowrap;
+      min-width: 62px;
+    }
+    .login-box .options-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 12px 0 16px;
+    }
+    .login-box .options-row label {
+      color: #ffffff;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .login-box .options-row a {
+      color: #AED6F1;
+      font-size: 0.88rem;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .login-box .options-row a:hover { color: #fff; }
+    .login-box .btn-login {
+      display: inline-block;
+      background: #e8e8e8;
+      border: 1px solid #999;
+      border-radius: 2px;
+      padding: 4px 16px;
+      font-size: 0.88rem;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      margin-bottom: 18px;
+      color: #000;
+    }
+    .login-box .btn-login:hover { background: #d5d5d5; }
+    .login-box .register-line {
+      color: #ffffff;
+      font-size: 0.88rem;
+    }
+    .login-box .register-line a {
+      color: #AED6F1;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .login-box .register-line a:hover { color: #fff; }
+
+    /* CAMPUS INFO BOX (RIGHT) */
+    .info-box {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 22px 26px 24px;
+      flex: 1;
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+    .info-box h2 {
+      color: #8B0000;
+      font-size: 1.55rem;
+      font-weight: bold;
+      font-family: 'Times New Roman', serif;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .info-box .about-text {
+      font-size: 0.86rem;
+      color: #111;
+      line-height: 1.7;
+      font-family: Arial, sans-serif;
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+    .info-box .campus-img-wrap {
+      text-align: center;
+    }
+    .info-box .campus-img-wrap img {
+      max-width: 100%;
+      width: 480px;
+      height: 250px;
+      object-fit: cover;
+      border: 1px solid #bbb;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>AMRITA VISHWA VIDHYAPEETHAM</h1>
+</div>
+
+<div class="campus-nav">
+  <a href="5camaravati.html">AMARAVATI</a>
+  <a href="5camritapuri.html">AMRITAPURI</a>
+  <a href="bengaluru.html" class="active">BENGALURU</a>
+  <a href="chennai.html">CHENNAI</a>
+  <a href="coimbatore.html">COIMBATORE</a>
+  <a href="faridabad.html">FARIDABAD</a>
+  <a href="kochi.html">KOCHI</a>
+  <a href="mysuru.html">MYSURU</a>
+
+</div>
+
+<div class="main-bg">
+
+  <div class="login-box">
+    <h2>Login</h2>
+    <div class="field-row">
+      <input type="email" placeholder="Enter your email id"/>
+      <span class="field-label">Email</span>
+    </div>
+    <div class="field-row">
+      <input type="password" placeholder="Enter your password"/>
+      <span class="field-label">Password</span>
+    </div>
+    <div class="options-row">
+      <label><input type="checkbox"/> Save me</label>
+      <a href="#">Forgot Password?</a>
+    </div>
+    <button class="btn-login">Login</button>
+    <div class="register-line">Don't have an account?<a href="#"> Register</a></div>
+  </div>
+
+  <div class="info-box">
+    <h2>About the Campus</h2>
+    <p class="about-text">Located in India's Silicon Valley, the Bengaluru campus of Amrita Vishwa Vidyapeetham is at the forefront of technology and innovation. The campus has strong industry partnerships with leading IT companies and startups, providing students with outstanding internship and placement opportunities. With a curriculum driven by industry needs, students gain hands-on experience and cutting-edge technical skills that make them highly sought-after by top employers across the country and globally.</p>
+    <div class="campus-img-wrap">
+      <img src="https://webfiles.amrita.edu/2020/08/G4JiCpQi-790-75.jpg" alt="BENGALURU Campus"
+          />
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
