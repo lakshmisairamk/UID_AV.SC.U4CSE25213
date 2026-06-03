@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Checker Web App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ff7b00;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff5200;
+            transform: scale(1.05);
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🔢 Number Operations Web App</h1>
+
+    <div class="container">
+        <input type="number" id="num" placeholder="Enter a number"><br>
+
+        <button onclick="checkEvenOdd()">Even / Odd</button>
+        <button onclick="checkPrime()">Prime Check</button>
+        <button onclick="findFactorial()">Factorial</button>
+        <button onclick="checkArmstrong()">Armstrong</button>
+
+        <div id="output">Result will appear here</div>
+    </div>
+
+    <script>
+        function getNumber() {
+            let num = document.getElementById("num").value;
+            if (num === "") {
+                document.getElementById("output").innerHTML = "⚠️ Please enter a number!";
+                return null;
+            }
+            return parseInt(num);
+        }
+
+        function checkEvenOdd() {
+            let num = getNumber();
+            if (num === null) return;
+
+            let result = (num % 2 === 0) ? "Even Number" : "Odd Number";
+            document.getElementById("output").innerHTML = `✅ ${num} is ${result}`;
+        }
+
+        function checkPrime() {
+            let num = getNumber();
+            if (num === null) return;
+
+            if (num < 2) {
+                document.getElementById("output").innerHTML = `❌ ${num} is NOT Prime`;
+                return;
+            }
+
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    document.getElementById("output").innerHTML = `❌ ${num} is NOT Prime`;
+                    return;
+                }
+            }
+
+            document.getElementById("output").innerHTML = `✅ ${num} is Prime`;
+        }
+
+        function findFactorial() {
+            let num = getNumber();
+            if (num === null) return;
+
+            if (num < 0) {
+                document.getElementById("output").innerHTML = "❌ Factorial not defined for negative numbers";
+                return;
+            }
+
+            let fact = 1;
+            for (let i = 1; i <= num; i++) {
+                fact *= i;
+            }
+
+            document.getElementById("output").innerHTML = `✅ Factorial of ${num} is ${fact}`;
+        }
+
+        function checkArmstrong() {
+            let num = getNumber();
+            if (num === null) return;
+
+            let sum = 0;
+            let temp = num;
+            let digits = num.toString().length;
+
+            while (temp > 0) {
+                let digit = temp % 10;
+                sum += Math.pow(digit, digits);
+                temp = Math.floor(temp / 10);
+            }
+
+            if (sum === num) {
+                document.getElementById("output").innerHTML = `✅ ${num} is an Armstrong Number`;
+            } else {
+                document.getElementById("output").innerHTML = `❌ ${num} is NOT an Armstrong Number`;
+            }
+        }
+    </script>
+
+</body>
+</html>

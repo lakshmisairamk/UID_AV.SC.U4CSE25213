@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input:focus {
+            border-color: #2575fc;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #1a5ed8;
+        }
+
+        .msg {
+            font-size: 13px;
+            margin: 2px 0 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+<input type="text" id="name" placeholder="Enter Name">
+
+<input type="text" id="username" placeholder="Enter Username" onkeyup="checkUsername()">
+<p id="userMsg" class="msg"></p>
+
+<input type="text" id="email" placeholder="Enter Email">
+
+<input type="password" id="password" placeholder="Enter Password" onkeyup="checkPassword()">
+<p id="passMsg" class="msg"></p>
+
+<input type="text" id="phone" placeholder="Enter Mobile Number" onblur="checkPhone()">
+
+<button type="submit">Register</button>
+
+</form>
+
+</div>
+
+<script>
+
+// Username validation
+function checkUsername() {
+    let user = document.getElementById("username").value;
+
+    if (user.length < 5) {
+        document.getElementById("userMsg").innerHTML = "Minimum 5 characters required";
+        document.getElementById("userMsg").style.color = "red";
+    } else {
+        document.getElementById("userMsg").innerHTML = "Valid Username";
+        document.getElementById("userMsg").style.color = "green";
+    }
+}
+
+// Password strength
+function checkPassword() {
+    let pass = document.getElementById("password").value;
+
+    if (pass.length < 6) {
+        document.getElementById("passMsg").innerHTML = "Weak Password";
+        document.getElementById("passMsg").style.color = "red";
+    } else {
+        document.getElementById("passMsg").innerHTML = "Strong Password";
+        document.getElementById("passMsg").style.color = "green";
+    }
+}
+
+// Phone validation
+function checkPhone() {
+    let phone = document.getElementById("phone").value;
+    let pattern = /^[0-9]{10}$/;
+
+    if (!pattern.test(phone)) {
+        alert("Enter valid 10-digit mobile number");
+    }
+}
+
+// Final validation
+function validateForm() {
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    if (name == "") {
+        alert("Name cannot be empty");
+        return false;
+    }
+
+    let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (!emailPattern.test(email)) {
+        alert("Invalid Email");
+        return false;
+    }
+
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+
+    return true;
+}
+
+</script>
+
+</body>
+</html>
